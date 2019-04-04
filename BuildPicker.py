@@ -1,12 +1,38 @@
+from random import choice
 import random
-import buildorders
+from builds import builds
+
+def BuildOrder():
+    build = None
+    while build is None:
+        matchup = input("What is the matchup? ").upper()
+        if matchup not in builds:
+            print("Invalid Input, try again.")
+            continue
+
+        build = random.choice(builds[matchup])
+        print(matchup + " Build Order:")
+        print(build)
 
 
-# Ask user what race they are ---
-# Ask what the match up is ---
-print("Welcome to Sheekthief's build order selector!")
+"""
+Code grabbed from reddit to help me along!
 
 
+def BO_Selectorv2():
+    build = None
+    while build is None:
+        matchup = input("What is the matchup? ").upper()
+        if matchup not in builds:
+            print("Invalid Input, try again.")
+            continue
+        build = (random.choice(builds[str(matchup)]))
+    print('{matchup) Build Order:')
+    print(build)
+"""
+
+"""
+Original Build Order Selector!
 
 def BO_Selector():
 
@@ -60,10 +86,8 @@ def BO_Selector():
         print("Invalid Input, try again.")
         BO_Selector()
 
+"""
 
-BO_Selector()
+print("Welcome to Sheekthief's build order selector!")
+BuildOrder()
 
-
-# Ask if they want an econ build or all in or timing attack or random
-# Probably random to start
-# Clean up code and reduce repetition

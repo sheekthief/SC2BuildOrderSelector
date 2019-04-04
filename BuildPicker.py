@@ -3,16 +3,21 @@ import random
 from builds import builds
 
 def BuildOrder():
-    build = None
-    while build is None:
-        matchup = input("What is the matchup? ").upper()
-        if matchup not in builds:
-            print("Invalid Input, try again.")
-            continue
+    restart = 1
+    while restart != "x":
+        build = None
+        while build is None:
+            matchup = input("What is the matchup? ").upper()
+            if matchup not in builds:
+                print("Invalid Input, try again.")
+                continue
 
-        build = random.choice(builds[matchup])
-        print(matchup + " Build Order:")
-        print(build)
+            build = random.choice(builds[matchup])
+            print(matchup + " Build Order:")
+            print(build)
+            restart = input("Press Enter to restart, or x to exit.")
+
+
 
 
 """

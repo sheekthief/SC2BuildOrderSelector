@@ -1,6 +1,7 @@
 from random import choice
 import random
 from builds import builds
+import os
 
 def BuildOrder():
     restart = 1
@@ -13,6 +14,7 @@ def BuildOrder():
                 continue
 
             build = random.choice(builds[matchup])
+            os.system('cls')
             print(matchup + " Build Order:")
             print(build)
             restart = input("Press Enter to restart, or x to exit.")
